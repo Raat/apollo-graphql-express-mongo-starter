@@ -1,8 +1,8 @@
 import express from 'express';
 import { graphqlExpress, graphiqlExpress } from 'apollo-server-express';
 import bodyParser from 'body-parser';
-import schema from './graphql/schema/schema';
-import { userSeeder } from './mongo/db';
+import schema from '../graphql/schema/schema';
+import { userSeeder } from '../mongo';
 
 const app = express();
 
@@ -17,6 +17,6 @@ app.get('/user/seed', userSeeder);
 
 
 app.listen(3000, () => {
-  console.log('Example app listening on port 3000!');
+  console.log('App is listening on port 3000');
 });
 
